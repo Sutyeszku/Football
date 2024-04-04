@@ -1,4 +1,4 @@
-<h1 d="cim">Teams from </h1>
+<h1 id="cim">Players from </h1>
 
 <div class="container mt-5">
     
@@ -12,7 +12,7 @@
 <script>
 
 const urlParams = new URLSearchParams(window.location.search)
-const country = urlParams.get( "country" );
+const team = urlParams.get( "team" );
 const url = 'https://api-football-v1.p.rapidapi.com/v3/teams?country=' + country;
 const options = {
 	method: 'GET',

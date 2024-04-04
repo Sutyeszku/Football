@@ -1,4 +1,4 @@
-<h1>Countries</h1>
+<h1 id="cim">Countries</h1>
 
 <div class="container mt-5">
   <div class="row" style="display: flex; justify-content: center;">
@@ -6,12 +6,8 @@
   </div>
 </div>
 
-
-
 <script src="apiKey.js"></script>
-
 <script>
-  //document.querySelector(".pageBtn").addEventListener("click", handlePaginationClick);
 
   let countries = [];
   let page = 1;
@@ -75,13 +71,12 @@
         elements[i].remove();
     }
   }
-  totalPages = Math.ceil(totalItems / pageSize);// felfele kerekít a legközelebbi egész számra
+  totalPages = Math.ceil(totalItems / pageSize);
 
   let pageBtn = document.createElement('div');
   pageBtn.classList.add('row');
-  pageBtn.classList.add('border');
+  pageBtn.classList.add('justify-content-center');
   pageBtn.classList.add('buttonHolder');
-  //document.querySelector(".pageBtn").innerHTML = "";
 
   for (let i = 1; i <= totalPages; i++) {
     let button = document.createElement("button");
@@ -95,6 +90,7 @@
     document.querySelector('.container').appendChild(pageBtn);
   }
 }
+
 
   function handlePaginationClick(event) {
       console.log("gomb érték: " + event.target.textContent);

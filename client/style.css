@@ -23,9 +23,11 @@ button {
 }
 
 .page-btn{
-    border: 2px solid black;
+    color: blue;
+    border: none;
+    margin: 5px;
 }
 
 .page-active{
-    background-color: aqua;
+    background-color: gray;
 }
