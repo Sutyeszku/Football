@@ -1,0 +1,23 @@
+.nav-bar {
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    width: auto;
+    height: auto;
+ }
+ 
+ button #Countries {
+    background: url('../client/img/countryIcon.jpg') no-repeat;
+ }
+
+ .scroll{
+    display: flex;
+    
+ }
+
+.head{
+    background-image: url();
+}
