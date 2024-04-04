@@ -6,8 +6,6 @@
     <p class="text-center"></p>
 </div>
 
-<p>helo</p>
-
 <div class="container-fluid">
     <div class="row align-items-center">
     <div class="col-lg-3 col-md-4 col-sm-6">

@@ -21,3 +21,11 @@ button {
 .head{
     background-image: url();
 }
+
+.page-btn{
+    border: 2px solid black;
+}
+
+.page-active{
+    background-color: aqua;
+}

@@ -1,68 +1,60 @@
 <h1>Countries</h1>
 
 <div class="container mt-5">
-        <div class="row" style="display: flex; justify-content: center;">
-            <div class="scroll container" id="scrollContainer">
-                <button class="btn btn-primary m-1" id="prevBtn" onclick="prevPage()"><-</button>
-                <p id="pageInfo"></p>
-                <button class="btn btn-primary m-1" id="nextBtn" >-></button>
-            </div>
-            <div class="row" id="countryContainer"></div>
-        </div>
-    </div>
+  <div class="row" style="display: flex; justify-content: center;">
+
+  </div>
+</div>
+
 
 
 <script src="apiKey.js"></script>
 
 <script>
-const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': apiKey,
-		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
-	}
-};
+  //document.querySelector(".pageBtn").addEventListener("click", handlePaginationClick);
 
+  let countries = [];
+  let page = 1;
+  let pageSize = 8;
+  let totalPages = 1;
 
-///////////////////////////////////////////////////////////
-fetch(url, options)
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+  const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': apiKey,
+      'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     }
-    return response.json();
-  })
-  .then(data => {
+  };
 
-    if (data.response && Array.isArray(data.response)) {
-      const container = document.querySelector('.row');   
-      const max = data.response.length;
-      const start = 0;
-      const end = 40;
+  fetch(url, options)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      return response.json();
+    })
+    .then(data => {
+      countries = data.response;
+      console.log(countries);
+      showCountries();
 
-      showCountries(data.response.slice(start,end));
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
 
-      // next button
-      document.getElementById("nextBtn").addEventListener("click", function(){
-        showCountries(data.response.slice((start+1), (start + 40)));
-        console.log("+");
-        start += 40;
-        if (start >= max){
-          alert('No more countries to display')
-          document.getElementById("next").disabled=true;
-        }                
-      });
-      
-      // previous button
-      
-      
-                                  
-          
-    
-      function  showCountries(countries) {     
-        countries.forEach((country) => {
-          container.innerHTML += `
+
+  function showCountries() {
+    let startIndex = (page - 1) * pageSize;
+    let endIndex = startIndex + pageSize;
+    let countriestoShow = countries.slice(startIndex, endIndex);
+    console.log(countriestoShow);
+
+    document.querySelector('.row').innerHTML = "";
+
+    countriestoShow.forEach((country) => {
+      document.querySelector('.row').innerHTML += `
           <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="teamHop(this)" id="${country.name}" style="cursor: pointer;" >
 				    <img src="${country.flag}" class="card-img-top" alt="${country.code}">
 				    <div class="card-body text-center">
@@ -70,53 +62,49 @@ fetch(url, options)
 				    </div>
 		    	</div>
             `;
-        })
-      };
+    });
 
-      showCountries(data.response.slice(0, 40));
-    
-      
-    ///itt volt
-    
-      
-    } else {
-      throw new Error('Invalid response format');
+    renderPagination(countries.length);
+  };
+
+  function renderPagination(totalItems) {
+  let elements = document.getElementsByClassName('buttonHolder');
+  console.log(elements.length);
+  if(elements.length > 0){
+    for(let i = 0; i < elements.length; i++){
+        elements[i].remove();
     }
-  })
-  .catch(error => {
-    console.error('Error:', error);
-  });
+  }
+  totalPages = Math.ceil(totalItems / pageSize);// felfele kerekít a legközelebbi egész számra
 
-function  prevPage() {
-        console.log("-");
-        if ((start - 40) < 0 ) {
-          return false;
-        } else{
-          showCountries(data.response.slice((start-40),(start-1)))
-          start -= 40;
-        } 
+  let pageBtn = document.createElement('div');
+  pageBtn.classList.add('row');
+  pageBtn.classList.add('border');
+  pageBtn.classList.add('buttonHolder');
+  //document.querySelector(".pageBtn").innerHTML = "";
+
+  for (let i = 1; i <= totalPages; i++) {
+    let button = document.createElement("button");
+    button.textContent = i;
+    button.classList.add("page-btn");
+    button.addEventListener('click', handlePaginationClick);
+    if (i === page) {
+      button.classList.add("page-active");
+    }
+    pageBtn.appendChild(button);
+    document.querySelector('.container').appendChild(pageBtn);
+  }
 }
 
-function teamHop(event){
+  function handlePaginationClick(event) {
+      console.log("gomb érték: " + event.target.textContent);
+      page = +event.target.textContent;
+      showCountries();
+    
+  }
+
+  function teamHop(event) {
     console.log(event.id);
     window.location.href = 'index.php?prog=Teams.php&country=' + event.id;
-}
-
-
-/*
-/////
-      data.response.slice(0, 40).forEach(country => {
-        if (country.flag) {
-            console.log(country);
-            container.innerHTML += `
-			    <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="teamHop(this)" id="${country.name}" style="cursor: pointer;" >
-				    <img src="${country.flag}" class="card-img-top" alt="${country.code}">
-				    <div class="card-body text-center">
-					    <h5 class="card-title">${country.name}</h5>
-				    </div>
-		    	</div>
-		    `;
-        }
-      });
-*/
-</script>    
+  }
+</script>
