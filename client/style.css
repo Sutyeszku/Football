@@ -31,3 +31,12 @@ button {
 .page-active{
     background-color: gray;
 }
+
+.jatekosKartya{
+    width: 217px;
+    height: 217px;
+}
+
+.gradient-custom{
+    background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+}

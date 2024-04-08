@@ -28,33 +28,26 @@
         <a class="nav-link" href="index.php">Home</a>
       </li>
       <li class="nav-item p-2 m-2">
-        <a class="nav-link" href="index.php?prog=Leagues.php"></a>
-      </li>
-      <li class="nav-item p-2 m-2">
         <a class="nav-link" href="index.php?prog=Players.php">Players</a>
       </li>
       <li class="nav-item p-2 m-2">
         <a class="nav-link" href="index.php?prog=Countries.php">Countries</a>
-      </li>
-      <li class="nav-item p-2 m-2">
-        <a class="nav-link" href="index.php?prog=Teams.php">Teams</a>
       </li>
     </ul>
 
     <div>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item p-2 m-2" id="login">
-          <a class="nav-link" href="index.php?prog=Countries.php">Login</a>
+          <a class="nav-link" href="index.php?prog=Login.php">Login</a>
         </li>
         <li class="nav-item p-2 m-2" id="register">
-          <a class="nav-link" href="index.php?prog=Leagues.php">Register</a>
+          <a class="nav-link" href="index.php?prog=SignUp.php">Sign Up</a>
         </li>
       </ul>
     
      </div>
     </div>
   </nav>
-
 
     
     <div class="row p-3 justify-content-center">
