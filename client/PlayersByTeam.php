@@ -57,7 +57,7 @@ fetch(url, options)
             
             if(player.position == 'Goalkeeper'){
               document.querySelector('.goalkeepers').innerHTML += `
-            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this)" id="${player.id}" style="cursor: pointer;" >
+            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this, '${player.photo}')" id="${player.id}" style="cursor: pointer;" >
 				        <img src="${player.photo}" class="card-img-top jatekosKartya" alt="${player.name}">
 				      <div class="card-body text-center">
 				  	    <h5 class="card-title">${player.name}</h5>
@@ -68,7 +68,7 @@ fetch(url, options)
 
             if(player.position == 'Defender'){
               document.querySelector('.defenders').innerHTML += `
-            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this)" id="${player.id}" style="cursor: pointer;" >
+            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this, '${player.photo}')" id="${player.id}" style="cursor: pointer;" >
 				        <img src="${player.photo}" class="card-img-top jatekosKartya" alt="${player.name}">
 				      <div class="card-body text-center">
 				  	    <h5 class="card-title">${player.name}</h5>
@@ -79,7 +79,7 @@ fetch(url, options)
 
             if(player.position == 'Midfielder'){
               document.querySelector('.midfielders').innerHTML += `
-            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this)" id="${player.id}" style="cursor: pointer;" >
+            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this, '${player.photo}')" id="${player.id}" style="cursor: pointer;" >
 				        <img src="${player.photo}" class="card-img-top jatekosKartya" alt="${player.name}">
 				      <div class="card-body text-center">
 				  	    <h5 class="card-title">${player.name}</h5>
@@ -90,7 +90,7 @@ fetch(url, options)
 
             if(player.position == 'Attacker'){
               document.querySelector('.attackers').innerHTML += `
-            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this)" id="${player.id}" style="cursor: pointer;" >
+            <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="playerHop(this, '${player.photo}')" id="${player.id}" style="cursor: pointer;" >
 				        <img src="${player.photo}" class="card-img-top jatekosKartya" alt="${player.name}">
 				      <div class="card-body text-center">
 				  	    <h5 class="card-title">${player.name}</h5>
@@ -112,9 +112,11 @@ fetch(url, options)
   });
 
   
-  function playerHop(event){
+  function playerHop(event, kep){
     console.log(event.id);
-    window.location.href = 'index.php?prog=PlayersStats.php&player=' + event.id;
+    console.log(kep);
+    window.location.href = 'index.php?prog=PlayersStats.php&player=' + event.id + "&photo=" + kep;
+
 }
 
 
