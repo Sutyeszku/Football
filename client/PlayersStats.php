@@ -13,7 +13,7 @@
   <p id="thisSeason"></p>
   <div class="row playerStat" style="display: flex; justify-content: center;">
 
-  
+
 
   </div>
 
@@ -61,7 +61,7 @@
       </div>
 
       <div class="col-4 text-center">
-        <button src="" id="csillag" onclick="favourite()" style="width: 100px; height: 100px; border: none; background: none;"><img src="../client/img/starBlack.png" alt="csillag"></button>
+        <button src="" id="csillag" onclick="addFavorite([${player.player_id}, '${kep}', '${player.player_name}'])" style="width: 100px; height: 100px; border: none; background: none;"><img src="../client/img/starBlack.png" alt="csillag"></button>
         <h3>Rating: ${rating}/10 <img src="../client/img/starGold.png" alt="csillag" style="height: 30px; weight: 30px; "></h3>
       </div>
       `;
@@ -188,11 +188,28 @@
       console.error(error);
     });
 
-    function favourite(){
-      console.log("csillag");
-      document.querySelector('#csillag').innerHTML = `
+  function addFavorite(objString) {
+    document.querySelector('#csillag').innerHTML = `
         <img src="../client/img/starGold.png" alt="csillag">
       `;
+    var obj = eval(objString);
+    console.log(obj[0], obj[1], obj[2]);
+    let myFormData = new FormData();
+    myFormData.append('player_id', obj[0]);
+    myFormData.append('photo', obj[1]);
+    myFormData.append('player_name', obj[2]);
+    console.log(myFormData);
+
+    let configObj = {
+      method: 'POST',
+      body: myFormData
     }
+    postData('addFavourite.php', renderResult, configObj);
+
+  }
+
+  function renderResult(data) {
+    console.log(data.msg);
+  }
 
 </script>

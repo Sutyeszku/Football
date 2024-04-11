@@ -1,3 +1,11 @@
+<?php
+  session_start();
+    include("connection.php");
+    include("functions.php");
+
+    $user_data = check_login($con);
+?>
+
 <!DOCTYPE html>
 <html lang="hu">
 <head>
@@ -37,11 +45,11 @@
 
     <div>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item p-2 m-2" id="login">
-          <a class="nav-link" href="index.php?prog=Login.php">Login</a>
+      <li class="nav-item p-2 m-2" id="favourites">
+          <a class="nav-link" href="index.php?prog=Favourites.php">Favourites</a>
         </li>
-        <li class="nav-item p-2 m-2" id="register">
-          <a class="nav-link" href="index.php?prog=SignUp.php">Sign Up</a>
+        <li class="nav-item p-2 m-2" id="logout">
+          <a class="nav-link" href="index.php?prog=SignOut.php">Logout</a>
         </li>
       </ul>
     
@@ -58,7 +66,6 @@
           include 'main.php'; 
       ?>
     </div>
-
 
  
   <script src="bootstrap/jquery-3.5.1.min.js"></script>

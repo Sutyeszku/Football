@@ -1,4 +1,4 @@
-<div class="head">
+<div class="head" style=" background: url('../client/img/homepage.jpg'); ">
     <h1 class="text-center">KickStats</h1>
 
     <h3 class="text-center">Welcome to KickStats!</h3>
@@ -6,19 +6,26 @@
     <p class="text-center">Browse your favourite Football Player's stast!</p>
 </div>
 
-<div class="container-fluid">
-    <div class="row align-items-center">
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <p>Search Players By Countries</p>
-        <button id="Countries">
-            <a class="nav-link" href="index.php?prog=Countries.php">Countries</a>
-        </button>
+<div class="container mt-5">
+
+    <div class="row text-center">
+
+        <div class="col-12">
+            <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                    <i class="fas fa-search"></i>
+                </span>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <p>Search Players By Countries</p>
+            <button id="Countries" class="col-md" style="width: 650px; height: 400px; background: url('../client/img/countryIcon.jpg'); background-size: cover;">
+                <a class="nav-link" href="index.php?prog=Countries.php">Countries</a>
+            </button>
+        </div>
+
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6">
-        <button id="Teams">
-            <a class="nav-link" href="index.php?prog=Teams.php">Search Bar Helye</a>
-        </button>
-    </div>
-    </div>
-    
+
 </div>
