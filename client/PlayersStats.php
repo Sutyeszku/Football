@@ -13,8 +13,6 @@
   <p id="thisSeason"></p>
   <div class="row playerStat" style="display: flex; justify-content: center;">
 
-
-
   </div>
 
 </div>

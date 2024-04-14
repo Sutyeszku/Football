@@ -4,32 +4,30 @@
     margin-right: auto;
 }
 
-button {
-    width: auto;
-    height: auto;
- }
- 
- button #Countries {
-    background: url('../client/img/countryIcon.jpg') no-repeat;
- }
-
  .scroll{
     display: flex;
-    
  }
 
-.head{
-    background-image: url();
-}
-
 .page-btn{
-    color: blue;
+    background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
+    width: 50px;
+    text-align: center;
+    height: auto;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    
     border: none;
-    margin: 5px;
+    text-decoration: none;
 }
 
 .page-active{
-    background-color: gray;
+    color: rgb(105, 105, 105);
 }
 
 .jatekosKartya{
@@ -39,4 +37,25 @@ button {
 
 .gradient-custom{
     background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+}
+
+.betu{
+    font-weight: bold;
+    color:  linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    font-style:oblique;
+
+    text-shadow: 0 0 3px #FFA500;
+                
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+}
+
+.szin{
+background-color: #0093E9;
+background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+border-radius: 25px;
+}
+
+.orszagok{
+    
 }

@@ -10,9 +10,8 @@ $sql = "INSERT INTO favourites (user_id, player_id, kep, player_name) VALUES ({$
 try {
     $stmt = $con->query($sql);
     echo json_encode(["msg" => "sikeres mentes: {$player_name}"]);
-
 } catch (Exception $e) {
     echo json_encode(["msg" => "sikertelen mentes:   {$e} {$player_name}"]);
-
 }
+
 ?>

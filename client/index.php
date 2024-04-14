@@ -21,7 +21,11 @@
 <body>
 <div class="container bg-light p-0">
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded shadow">
+  <nav class="navbar navbar-expand-lg navbar-dark szin"  
+  style="background-color: #08AEEA;
+background-image: linear-gradient(180deg, #08AEEA 0%, #2AF598 100%);
+border-radius: 25px;
+">  
     <a class="navbar-brand" href="index.php">
     <img src="../client/img/FootBall.png" width="30" height="30" class="d-inline-block align-top" alt="">
     KickStats
@@ -33,7 +37,7 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item active p-2 m-2">
-        <a class="nav-link" href="index.php">Home</a>
+        <a class="nav-link" href="index.php" style="color: white; text-shadow: 0 0 3px #FFA500; font-weight: bold;">Home</a>
       </li>
       <li class="nav-item p-2 m-2">
         <a class="nav-link" href="index.php?prog=Players.php">Players</a>
@@ -46,7 +50,7 @@
     <div>
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item p-2 m-2" id="favourites">
-          <a class="nav-link" href="index.php?prog=Favourites.php">Favourites</a>
+          <a class="nav-link" href="index.php?prog=Favourites.php" style="color: white; text-shadow: 0 0 3px #FFA500; font-weight: bold;">Favourites</a>
         </li>
         <li class="nav-item p-2 m-2" id="logout">
           <a class="nav-link" href="index.php?prog=SignOut.php">Logout</a>
@@ -67,7 +71,10 @@
       ?>
     </div>
 
- 
+    <footer class="text-center">
+    <p>© Németh Sándor</p>
+    </footer>
+    
   <script src="bootstrap/jquery-3.5.1.min.js"></script>
   <script src="bootstrap/bootstrap.bundle.js"></script>
 </body>

@@ -12,17 +12,17 @@
 
         <div class="col-12">
             <div class="input-group rounded">
-                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <input type="search" class="form-control rounded text-center" placeholder="Search for a Player" aria-label="Search" aria-describedby="search-addon" />
                 <span class="input-group-text border-0" id="search-addon">
                     <i class="fas fa-search"></i>
                 </span>
             </div>
         </div>
 
-        <div class="col-12">
+        <div class="col-12 orszagok">
             <p>Search Players By Countries</p>
             <button id="Countries" class="col-md" style="width: 650px; height: 400px; background: url('../client/img/countryIcon.jpg'); background-size: cover;">
-                <a class="nav-link" href="index.php?prog=Countries.php">Countries</a>
+                <a class="nav-link" href="index.php?prog=Countries.php" style="width: 600px; height: 400px;"></a>
             </button>
         </div>
 
