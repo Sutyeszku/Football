@@ -1,11 +1,5 @@
 <?php 
 
-session_start();
-
-    include("connection.php");
-    include("functions.php");
-
-
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
         //something was posted
@@ -30,7 +24,7 @@ session_start();
                     {
                         $_SESSION['user_id'] = $user_data['user_id'];
                         header("Location: index.php");
-                        die;
+                        //die;
                     }
                 }
             }
@@ -42,7 +36,7 @@ session_start();
 
 ?>
 
-<section class="vh-100 gradient-custom">
+<section class="vh-100" style="background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 ">

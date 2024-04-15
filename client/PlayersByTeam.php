@@ -121,7 +121,6 @@
       console.error('Error:', error);
     });
 
-
   function playerHop(event, kep) {
     console.log(event.id);
     console.log(kep);

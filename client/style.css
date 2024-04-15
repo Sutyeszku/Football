@@ -4,14 +4,9 @@
     margin-right: auto;
 }
 
- .scroll{
-    display: flex;
- }
-
 .page-btn{
     background-color: #08AEEA;
-background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
-
+    background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
     width: 50px;
     text-align: center;
     height: auto;
@@ -21,6 +16,7 @@ background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    border: gray 5px solid;
     
     border: none;
     text-decoration: none;
@@ -45,17 +41,4 @@ background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
     font-style:oblique;
 
     text-shadow: 0 0 3px #FFA500;
-                
-background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
-}
-
-.szin{
-background-color: #0093E9;
-background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-border-radius: 25px;
-}
-
-.orszagok{
-    
 }

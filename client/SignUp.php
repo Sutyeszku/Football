@@ -1,9 +1,4 @@
 <?php 
-session_start();
-
-    include("connection.php");
-    include("functions.php");
-
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
@@ -29,7 +24,7 @@ session_start();
 
             mysqli_query($con, $query);
 
-            header("Location: Login.php");
+            header("Location: index.php");
             die;
         }else
         {
