@@ -35,10 +35,10 @@ include ("functions.php");
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active p-2 m-2">
             <a class="nav-link" href="index.php"
-              style="color: white; text-shadow: 0 0 3px #FFA500; font-weight: bold;">Home</a>
+              style="color: white; font-weight: bold;">Home</a>
           </li>
           <li class="nav-item p-2 m-2">
-            <a class="nav-link" href="index.php?prog=Players.php">Players</a>
+            <a class="nav-link" href="index.php?prog=Players.php">🔍 Search</a>
           </li>
           <li class="nav-item p-2 m-2">
             <a class="nav-link" href="index.php?prog=Countries.php">Countries</a>
@@ -52,15 +52,16 @@ include ("functions.php");
               echo '<li class="nav-item p-2 m-2" id="favourites">
         <a class="nav-link" href="index.php?prog=Favourites.php" style="color: white; text-shadow: 0 0 3px #FFA500; font-weight: bold;">Favourites</a>
       </li>
-      <li class="nav-item p-2 m-2" id="logout">
-        <a class="nav-link" href="index.php?prog=SignOut.php">Logout</a>
+      <li class="nav-item p-2 m-2 row text-center" id="logout">
+        <a class="nav-link" href="index.php?prog=SignOut.php" style="color: black; font-weight: bold;">Logout</a>
+        <img src="../client/img/logout.png" alt="logouticon" class="align-self-center" style="height: 20px; width: auto;">
       </li>';
             } else {
               echo '<li class="nav-item p-2 m-2" id="logout">
-        <a class="nav-link" href="index.php?prog=Login.php">Login</a>
+        <a class="nav-link" href="index.php?prog=Login.php" style="color: white;">Login</a>
       </li>
       <li class="nav-item p-2 m-2" id="logout">
-        <a class="nav-link" href="index.php?prog=SignUp.php">SignUp</a>
+        <a class="nav-link" href="index.php?prog=SignUp.php" style="color: white;">SignUp</a>
       </li>';
             }
             ?>

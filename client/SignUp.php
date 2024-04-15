@@ -37,13 +37,13 @@
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 ">
-        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+        <div class="card text-dark" style="background-color: #08AEEA;background-image: linear-gradient(180deg, #08AEEA 0%, #2AF598 100%);border-radius: 25px;">
           <div class="card-body p-5 text-center">
 
             <div class="mb-md-5 mt-md-4 pb-5">
 
-              <h2 class="fw-bold mb-2 text-uppercase">Sign Up</h2>
-              <p class="text-white-50 mb-5">Please enter your e-mail and password!</p>
+              <h2 class="fw-bold mb-2 text-uppercase text-white">Sign Up</h2>
+              <p class="text-dark-50 mb-5">Please enter your username and password!</p>
 
               <form method="post">
               <div class="form-outline form-white mb-4">
@@ -62,7 +62,7 @@
             </div>
 
             <div>
-              <p class="mb-0">Already have an account? <a href="Login.php" class="text-white-50 fw-bold">Login</a>
+              <p class="mb-0">Already have an account? <a href="index.php?prog=Login.php" class="text-white-50 fw-bold">Login</a>
               </p>
             </div>
 

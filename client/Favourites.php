@@ -1,7 +1,7 @@
 <h1>Favourites</h1>
 
 <div class="container mt-5">
-    <div class="row text-center" style="display: flex; justify-content: center;">
+    <div class="row favouriteContainer text-center" style="display: flex; justify-content: center;">
         
     </div>
 <div>
@@ -11,12 +11,12 @@
 getData('showFavourite.php', showFavourites);
 
 function showFavourites(data){
-    document.querySelector('.row').innerHTML = ``;
+    document.querySelector('.favouriteContainer').innerHTML = ``;
     console.log(data);
     if(data[0].player_id){
     data.forEach(player => {
         console.log(player);
-    document.querySelector('.row').innerHTML += `
+    document.querySelector('.favouriteContainer').innerHTML += `
     <div class="mb-4 col-lg-3 col-md-4 col-sm-6 text-center" style="cursor: pointer;" >
         <img src="${player.kep}" class="card-img-top jatekosKartya" onclick="playerHop(this, '${player.kep}')" id="${player.player_id}" alt="${player.player_name}">
         <div class="card-body text-center">
@@ -27,7 +27,7 @@ function showFavourites(data){
 `;
 });
 }else{
-    document.querySelector('.row').innerHTML = `
+    document.querySelector('.favouriteContainer').innerHTML = `
         <h1>Még nincsenek kedvenceid.</h1>
     `;
 }

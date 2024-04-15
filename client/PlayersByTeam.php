@@ -125,8 +125,6 @@
     console.log(event.id);
     console.log(kep);
     window.location.href = 'index.php?prog=PlayersStats.php&player=' + event.id + "&photo=" + kep;
-
   }
-
 
 </script>

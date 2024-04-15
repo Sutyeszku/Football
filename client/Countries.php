@@ -1,7 +1,7 @@
 <h1 id="cim">Countries</h1>
 
 <div class="container mt-5">
-  <div class="row" style="display: flex; justify-content: center;">
+  <div class="row countryContainer" style="display: flex; justify-content: center;">
 
   </div>
 </div>
@@ -47,10 +47,10 @@
     let countriestoShow = countries.slice(startIndex, endIndex);
     console.log(countriestoShow);
 
-    document.querySelector('.row').innerHTML = "";
+    document.querySelector('.countryContainer').innerHTML = "";
 
     countriestoShow.forEach((country) => {
-      document.querySelector('.row').innerHTML += `
+      document.querySelector('.countryContainer').innerHTML += `
           <div class="mb-4 col-lg-3 col-md-4 col-sm-6" onclick="teamHop(this)" id="${country.name}" style="cursor: pointer;" >
 				    <img src="${country.flag}" class="card-img-top" alt="${country.code}">
 				    <div class="card-body text-center">
